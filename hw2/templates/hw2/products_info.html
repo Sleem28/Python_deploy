@@ -1,0 +1,16 @@
+{% extends 'hw2/base.html' %}
+
+{% block title %}Products info{% endblock %}
+
+{% block content %}
+<h1>Info about order's products.</h1>
+
+<h2>Order with number {{ order.pk }} has next products:</h2>
+<p></p>
+<ul>
+    {% for product in products %}
+    <li>{{ product }}</li>
+    {% endfor %}
+</ul>
+
+{% endblock %}

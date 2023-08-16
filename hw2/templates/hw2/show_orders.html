@@ -1,0 +1,36 @@
+{% extends 'hw2/base.html' %}
+
+{% block title %}Orders info{% endblock %}
+
+{% block content %}
+<h1>Sorted info about client's orders.</h1>
+
+<h2>Client with name {{ client.name }} has next orders:</h2>
+<p></p>
+<h3>Weekly orders:</h3>
+<ul>
+    {% for order in w_orders %}
+    <li><a href="{% url 'order_info' order.pk %}">
+            Order number: {{ order.pk }}
+        </a></li>
+    {% endfor %}
+</ul>
+<p></p>
+<h3>Monthly orders:</h3>
+<ul>
+    {% for order in m_orders %}
+    <li><a href="{% url 'order_info' order.pk %}">
+            Order number: {{ order.pk }}
+        </a></li>
+    {% endfor %}
+</ul>
+<p></p>
+<h3>Yearly orders:</h3>
+<ul>
+    {% for order in y_orders %}
+    <li><a href="{% url 'order_info' order.pk %}">
+            Order number: {{ order.pk }}
+        </a></li>
+    {% endfor %}
+</ul>
+{% endblock %}
